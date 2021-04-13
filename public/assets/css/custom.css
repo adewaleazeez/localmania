@@ -1,0 +1,182 @@
+.sidebar .nav .nav-item:hover {
+  background: transparent;
+}
+
+.sidebar
+  .nav:not(.sub-menu)
+  > .nav-item:hover:not(.nav-category):not(.nav-profile)
+  > .nav-link {
+  color: #001737;
+}
+
+.navbar .navbar-menu-wrapper .search-field .input-group {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+}
+.breadcrumb {
+  border: none;
+}
+.v-center-flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+
+.mymodal-wrapper {
+  max-width: 100%;
+  width: 450px;
+  zoom: 0.9;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  z-index: 99999 !important;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.form-control {
+  background-clip: padding-box;
+  border: 1px solid #c4cdd5;
+  border-radius: 4px;
+  outline: none;
+  resize: none;
+  background-color: #ffffff;
+  box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
+  transition: border-color ease-in-out 0.3s, box-shadow ease-in-out 0.3s;
+  font-weight: 600;
+}
+
+.card {
+  box-shadow: 0 1.2px 5.6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon span {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: calc(1.5em + 1.3rem + 2px);
+}
+
+.input-icon span i {
+  line-height: 0;
+  color: #80808f;
+}
+
+.input-icon span i:after,
+.input-icon span i:before {
+  line-height: 0;
+}
+
+.input-icon span .svg-icon svg g [fill] {
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+  fill: #80808f;
+}
+
+.input-icon span .svg-icon svg:hover g [fill] {
+  -webkit-transition: fill 0.3s ease;
+  transition: fill 0.3s ease;
+}
+
+.input-icon span .svg-icon svg {
+  height: 24px;
+  width: 24px;
+}
+
+.input-icon .form-control {
+  padding-left: calc(1.5em + 1.3rem + 2px);
+}
+
+.input-icon.input-icon-right span {
+  right: 0;
+  left: auto;
+}
+
+.input-icon.input-icon-right .form-control {
+  padding-left: 1rem;
+  padding-right: calc(1.5em + 1.3rem + 2px);
+}
+
+.form-control-sm {
+  height: 2.575rem;
+}
+
+.big-icon {
+  font-size: 4rem;
+}
+
+.MuiDialog-root {
+  z-index: 99999 !important;
+}
+
+#floating-ball {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  height: 55px;
+  width: 55px;
+  background: #0062ff;
+  z-index: 99;
+  -webkit-box-shadow: 0px 0px 31px 6px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 31px 6px rgba(0, 0, 0, 0.17);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.react-tooltip-lite {
+  background: #333;
+  color: white;
+  border-radius: 10px;
+}
+
+.react-tooltip-lite-arrow {
+  border-color: #333;
+}
+
+.growable {
+  transition: all 0.3s ease-in-out;
+}
+
+.growable:hover {
+  font-size: 150%;
+}
+
+.filter-col {
+  padding-left: 10px;
+  padding-right: 10px;
+}

@@ -1,0 +1,62 @@
+.credit-card {
+  position: relative;
+  max-width: 520px;
+  min-width: 520px;
+  margin: 50px auto;
+  min-height: 300px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(-240deg, #67b240, #006e47, #006e47);
+  justify-content: space-between;
+  font-family: sans-serif;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    color: rgba(249, 249, 249, 0.1);
+    background: linear-gradient(135deg, currentColor 25%, transparent 25%) -100px
+        0,
+      linear-gradient(225deg, currentColor 25%, transparent 25%) -100px 0,
+      linear-gradient(315deg, currentColor 25%, transparent 25%),
+      linear-gradient(45deg, currentColor 25%, transparent 25%);
+    background-size: calc(2 * 100px) calc(2 * 100px);
+  }
+
+  .logo {
+    width: auto;
+    height: 50px;
+    display: flex;
+    align-self: flex-end;
+    filter: drop-shadow(1px 1px 0 #555);
+    z-index: 1;
+  }
+
+  .name-and-expiry {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 3px;
+    filter: drop-shadow(1px 0px 1px #555);
+    text-transform: uppercase;
+  }
+
+  .numbers {
+    font-size: 36px;
+    letter-spacing: 9px;
+    text-align: center;
+    color: #fff;
+    filter: drop-shadow(1px 0px 1px #555);
+    z-index: 1;
+  }
+}

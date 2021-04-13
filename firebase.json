@@ -1,0 +1,22 @@
+{
+    "hosting": {
+        "site":"rsr-medical",
+        "public": "build",
+        "ignore": [
+            "firebase.json",
+            "Web.config",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [
+            {
+                "source": "/test/**",
+                "destination": "/test/index.html"
+            },
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    }
+}
