@@ -11,11 +11,12 @@ dotenv.config();
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={Constants.subfolder}>
         <Switch>
           {appRoutes.map((route, index) => (
             <Route
-              path={Constants.subfolder + route.route}
+              key={index}
+              path={route.route}
               exact
               component={route.component}
             />
