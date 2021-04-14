@@ -53,13 +53,13 @@ export default function PublicLayoutHeader({}) {
             {/* Logo Start */}
             <div className="col-md-2 col-sm-2">
               <div className="logo">
-                <a href={Constants.subfolder + "/"}>
+                <Link to={"/"}>
                   <img
                     src={Constants.subfolder + "/logo-wide.png"}
                     style={{ height: "35px" }}
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
             </div>
             {/* Logo End */}
