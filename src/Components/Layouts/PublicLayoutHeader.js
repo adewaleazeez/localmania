@@ -12,7 +12,7 @@ export default function PublicLayoutHeader({}) {
             {/*Left Start*/}
             <div className="col-lg-4 col-md-4">
               <div className="left-text">
-                <p>Welcome to FoodCommerce!</p>
+                <p>Welcome to Locamania!</p>
               </div>
             </div>
             {/*Left End*/}
@@ -81,7 +81,7 @@ export default function PublicLayoutHeader({}) {
                           <Link
                             to="/login"
                             style={{ color: "#ffffff" }}
-                            className="btn btn-warning mt-2 dropdown-button"
+                            className="btn btn-warning btn-theme-light mt-2 dropdown-button"
                           >
                             Login
                           </Link>
