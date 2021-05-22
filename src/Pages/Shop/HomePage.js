@@ -35,7 +35,7 @@ export default class HomePage extends Component {
                 style={{
                   height: "100%",
                   width: "100%",
-                  backgroundColor: "rgba(12,46,19,0.5)",
+                  backgroundColor: "rgba(32,0,65,0.5)",
                 }}
               >
                 <CenterBlock height={200}>

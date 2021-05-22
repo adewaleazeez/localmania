@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Constants from "../Utils/Constants";
 import Functions from "../Utils/Functions";
+import ProductRating from "./Shop/ProductRating";
 
 export default function ShopDisplayItem({
   productId,
@@ -15,12 +16,6 @@ export default function ShopDisplayItem({
   isNew,
   removeSpacing,
 }) {
-  ratingStars = ratingStars || 1;
-  const rating = [];
-  for (var i = 1; i <= ratingStars; i++) {
-    rating.push(i);
-  }
-
   const formattedAmount = Functions.currencyFormat(price);
   let discountedAmount = 0;
   if (discountPercentage && discountPercentage > 0) {
@@ -36,26 +31,24 @@ export default function ShopDisplayItem({
   return (
     <article className={`list-product ${removeSpacing && "mb-0"}`}>
       <div className="img-block">
-        <Link to={`/shop-product/${productId}`} className="thumbnail">
+        <Link to={`/product/${productId}`} className="thumbnail">
           <img className="first-img" src={image1} alt="" />
           <img className="second-img" src={image2 || image1} alt="" />
         </Link>
       </div>
       <ul className="product-flag">{isNew && <li className="new">New</li>}</ul>
       <div className="product-decs">
-        <Link className="inner-link" to={`/shop-product/${productId}`}>
+        <Link className="inner-link" to={`/product/${productId}`}>
           <span>{productCategory}</span>
         </Link>
         <h2>
-          <Link to={`/shop-product/${productId}`} className="product-link">
+          <Link to={`/product/${productId}`} className="product-link">
             {productName}
           </Link>
         </h2>
-        <div className="rating-product">
-          {rating.map((i) => (
-            <i className="fa fa-star small" style={{ zoom: "0.8" }} />
-          ))}
-        </div>
+
+        <ProductRating stars={ratingStars} />
+
         <div className="pricing-meta">
           <ul>
             {discountPercentage && (

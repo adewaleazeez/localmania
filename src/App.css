@@ -234,7 +234,7 @@ a.no-decoration:hover {
 }
 
 a {
-  color: #6a008a;
+  color: #200041;
 }
 a:hover {
   color: #6610f2;
@@ -264,15 +264,15 @@ a:hover {
 }
 
 .theme-color {
-  color: #006e47 !important;
+  color: #200041 !important;
 }
 
 .theme-bg {
-  background-color: #006e47 !important;
+  background-color: #200041 !important;
 }
 
 .theme-border {
-  border-color: #006e47 !important;
+  border-color: #200041 !important;
 }
 .bullet-line-list li:before {
   border: 3px solid #83b739 !important;
@@ -310,4 +310,14 @@ a:hover {
 
 .navbar .navbar-brand-wrapper {
   background: #ffffff;
+}
+
+.btn-theme-light.btn-theme-light {
+  background-color: #619dc2 !important;
+  border-color: #619dc2 !important;
+}
+
+.btn-theme-light.btn-theme-light:hover {
+  background-color: #4a6695 !important;
+  border-color: #4a6695 !important;
 }
