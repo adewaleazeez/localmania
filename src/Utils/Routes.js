@@ -7,6 +7,7 @@ import CheckoutPage from "../Pages/Shop/CheckoutPage";
 import PaymentSuccessPage from "../Pages/Shop/PaymentSuccessPage";
 import PaymentErrorPage from "../Pages/Shop/PaymentErrorPage";
 import SingleProductPage from "../Pages/Shop/SingleProductPage";
+import ProductSearchPage from "../Pages/Shop/ProductSearchPage";
 
 export const appRoutes = [
   {
@@ -40,5 +41,9 @@ export const appRoutes = [
   {
     route: "/product/:productReference",
     component: SingleProductPage,
+  },
+  {
+    route: "/search",
+    component: ProductSearchPage,
   },
 ];
