@@ -20,6 +20,7 @@
     "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "rc-datepicker": "^5.0.16",
+    "rc-slider": "^9.7.2",
     "react": "^16.13.0",
     "react-big-calendar": "^0.28.1",
     "react-bootstrap-table-next": "^4.0.3",
