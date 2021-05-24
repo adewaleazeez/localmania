@@ -168,6 +168,9 @@ export default class ProductSearchPage extends Component {
                   <div className="sidebar-widget mt-20">
                     <h4 className="pro-sidebar-title">Price</h4>
                     <div className=" mt-10">
+                      {
+                        // see documentation for Range slider here: https://slider-react-component.vercel.app
+                      }
                       <Range
                         min={1000}
                         max={1000000}
