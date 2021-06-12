@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import CardBlock from "../../Components/CardBlock";
 import CenterBlock from "../../Components/CenterBlock";
 import PublicLayout from "../../Components/Layouts/PublicLayout";
 import ShopDisplayItem from "../../Components/ShopDisplayItem";
+import APICall from "../../Utils/APICall";
 import Constants from "../../Utils/Constants";
 import SpinnerButton from "../../Utils/SpinnerButton";
 
@@ -12,13 +13,27 @@ export default class LoginPage extends Component {
     super(props);
     this.state = {
       loading: false,
+      redirectUrl: null
     };
   }
 
   componentDidMount() {}
 
+  callLoginEndpoint(){
+    this.setState({loading: true});
+
+    APICall("/login", "POST", this.state.payload)
+    .then(response=>{
+      localStorage.setItem('token', response.data.token);
+      this.setState({redirectUrl: "/account"});
+    }).catch(error=>{
+      this.setState({loading: false});
+    })
+  }
+
   render() {
     return (
+      this.state.redirectUrl?<Redirect to={this.state.redirectUrl} />:
       <PublicLayout>
         <div className="login-register-area mb-60px mt-53px">
           <div className="container">
@@ -56,7 +71,7 @@ export default class LoginPage extends Component {
                               <SpinnerButton
                                 className="btn btn-primary btn-block"
                                 label="Login"
-                                onClick={() => this.setState({ loading: true })}
+                                onClick={() => this.callLoginEndpoint()}
                                 loading={this.state.loading}
                               />
                             </div>
