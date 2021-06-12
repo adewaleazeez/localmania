@@ -33,7 +33,7 @@ export default class HomePage extends Component {
         {this.state.redirectUrl ? (
           <Redirect to={this.state.redirectUrl} />
         ) : (
-          <>
+          <React.Fragment>
             <section className="container  mb-20px mt-3">
               <div
                 className="feature-image"
@@ -195,7 +195,7 @@ export default class HomePage extends Component {
                 {/* Feature Slider End */}
               </div>
             </section>
-          </>
+          </React.Fragment>
         )}
       </PublicLayout>
     );

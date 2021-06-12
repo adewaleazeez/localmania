@@ -80,7 +80,7 @@ export default class PublicLayout extends Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         {this.state.loading && (
           <CenterBlock>
             <Spinner />
@@ -93,7 +93,7 @@ export default class PublicLayout extends Component {
             <PublicLayoutFooter />
           </div>
         )}
-      </>
+      </React.Fragment>
     );
   }
 }

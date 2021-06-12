@@ -18,12 +18,12 @@
     "firebase-admin": "^9.1.1",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^6.0.0",
     "rc-datepicker": "^5.0.16",
     "rc-slider": "^9.7.2",
     "react": "^16.13.0",
     "react-big-calendar": "^0.28.1",
-    "react-bootstrap-table-next": "^4.0.3",
+    "react-bootstrap-table-next": "^1.1.0",
     "react-chartjs-2": "^2.11.1",
     "react-credit-card-flipping": "^1.0.21",
     "react-date-picker": "^8.0.1",
@@ -37,9 +37,9 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-phone-input-2": "^2.13.8",
     "react-phone-input-intl": "^3.0.53",
-    "react-quill": "^1.3.5",
+    "react-quill": "^0.0.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^1.1.5",
     "react-select": "^3.1.0",
     "react-table": "^7.0.4",
     "react-tooltip-lite": "^1.12.0"
@@ -48,7 +48,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+	"deploy": "aws s3 sync build/ s3://localmania"
   },
   "eslintConfig": {
     "extends": "react-app"
