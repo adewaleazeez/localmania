@@ -49,7 +49,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-	"deploy": "aws s3 sync build/ s3://localmania"
+    "deploy": "aws s3 sync build/ s3://localmania"
   },
   "eslintConfig": {
     "extends": "react-app"

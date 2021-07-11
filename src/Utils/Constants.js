@@ -21,6 +21,9 @@ export default class Constants {
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       overflow: "visible",
+      border: "0",
+      width: "90%",
+      maxWidth: "500px",
     },
   };
 
