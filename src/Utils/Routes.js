@@ -8,6 +8,13 @@ import PaymentSuccessPage from "../Pages/Shop/PaymentSuccessPage";
 import PaymentErrorPage from "../Pages/Shop/PaymentErrorPage";
 import SingleProductPage from "../Pages/Shop/SingleProductPage";
 import ProductSearchPage from "../Pages/Shop/ProductSearchPage";
+import BuyerDashboard from "../Pages/Buyer/BuyerDashboard";
+import SellerDashboardPage from "../Pages/Seller/SellerDashboardPage";
+import SellerRegistationPage from "../Pages/Seller/SellerRegistrationPage";
+import SellerLoginPage from "../Pages/Seller/SellerLoginPage";
+import SellerCategoriesPage from "../Pages/Seller/SellerCategoriesPage";
+import SellerPasswordResetPage from "../Pages/Seller/SellerPasswordResetPage";
+import SellerRegistrationSuccessPage from "../Pages/Seller/SellerRegistrationSuccess";
 
 export const appRoutes = [
   {
@@ -45,5 +52,34 @@ export const appRoutes = [
   {
     route: "/search",
     component: ProductSearchPage,
+  },
+  {
+    route: "/buyer/dashboard",
+    component: BuyerDashboard,
+  },
+  ,
+  {
+    route: "/seller/dashboard",
+    component: SellerDashboardPage,
+  },
+  {
+    route: "/seller/registration",
+    component: SellerRegistationPage,
+  },
+  {
+    route: "/seller/login",
+    component: SellerLoginPage,
+  },
+  {
+    route: "/seller/registration-success",
+    component: SellerRegistrationSuccessPage,
+  },
+  {
+    route: "/seller/password-reset",
+    component: SellerPasswordResetPage,
+  },
+  {
+    route: "/seller/categories",
+    component: SellerCategoriesPage,
   },
 ];
