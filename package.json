@@ -1,6 +1,6 @@
 {
   "homepage": "",
-  "name": "proteintech",
+  "name": "localmania",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,7 @@
     "firebase-admin": "^9.1.1",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
-    "node-sass": "^6.0.0",
+    "node-sass": "^6.0.1",
     "rc-datepicker": "^5.0.16",
     "rc-slider": "^9.7.2",
     "react": "^16.13.0",

@@ -12,18 +12,26 @@ export default function (Url, Method, Data = null, timeoutOverride) {
   axios.interceptors.response.use(
     (response) => {
       console.log(response);
+      Toastr(
+        "info",
+        "Your request was successful...."
+      );
       if (response.data && response.data.redirectUrl) {
-        //if (response.data.redirectUrl.toLowerCase().startsWith("http")) {
-        //window.location.href = response.data.redirectUrl;
-        //} else {
-        //window.location.href =
-        //Constants.subfolder + response.data.redirectUrl;
-        //}
+        if (response.data.redirectUrl.toLowerCase().startsWith("http")) {
+          window.location.href = response.data.redirectUrl;
+        } else {
+          window.location.href =
+          Constants.subfolder + response.data.redirectUrl;
+        }
       }
       return response;
     },
     (error) => {
       console.log(error);
+      Toastr(
+        "error",
+        "Your request generated an error. Please check your network connection"+error
+      );
       if (error.response && error.response.status == "401") {
         window.location.href = Constants.subfolder + "/logout";
       } else {
@@ -32,6 +40,7 @@ export default function (Url, Method, Data = null, timeoutOverride) {
           "Your request generated an error. Please check your network connection"
         );
       }
+      console.log(error);
       return Promise.reject(error);
     }
   );
@@ -46,6 +55,7 @@ export default function (Url, Method, Data = null, timeoutOverride) {
   }
 
   console.log("api baseurl: " + baseUrl);
+  console.log("url: " + baseUrl + Url);
 
   var Response = axios({
     method: Method,

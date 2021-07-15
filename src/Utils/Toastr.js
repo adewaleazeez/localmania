@@ -11,7 +11,7 @@ export default function (_messageType, _message) {
 var throttledFunction = throttle(() => showMessage(), 1000);
 
 function showMessage() {
-  console.log(numberOfCalls);
+  //console.log(numberOfCalls);
   numberOfCalls++;
 
   var backgroundColor = "#83B739"; //success
