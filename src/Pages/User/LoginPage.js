@@ -7,11 +7,15 @@ import ShopDisplayItem from "../../Components/ShopDisplayItem";
 import APICall from "../../Utils/APICall";
 import Constants from "../../Utils/Constants";
 import SpinnerButton from "../../Utils/SpinnerButton";
+import UsersDataService from "../../Components/Services/Users.Service";
+import Toastr from "../../Utils/Toastr";
 
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: "",
+      password: "",
       loading: false,
       redirectUrl: null
     };
@@ -19,7 +23,27 @@ export default class LoginPage extends Component {
 
   componentDidMount() {}
 
-  callLoginEndpoint(){
+  callLoginEndpoint() {
+    this.setState({ loading: true });
+    var data = {
+      username: this.refs.username.value,
+      password: this.refs.password.value
+    };
+    
+    UsersDataService.findByUserNamePassword(data.username, data.password)
+      .then(response => {
+        
+        this.props.history.push('/');
+        //localStorage.setItem('token', response.data.token);
+        //this.setState({redirectUrl: "/account"});
+      })
+      .catch(e => {
+        //console.log(e);
+        this.setState({ loading: false });
+      });
+      
+  }
+  /*callLoginEndpoint(){
     this.setState({loading: true});
 
     APICall("/login", "POST", this.state.payload)
@@ -29,7 +53,7 @@ export default class LoginPage extends Component {
     }).catch(error=>{
       this.setState({loading: false});
     })
-  }
+  }*/
 
   render() {
     return (
@@ -52,12 +76,14 @@ export default class LoginPage extends Component {
                           <form method="post">
                             <input
                               type="text"
-                              name="email"
-                              placeholder="Email"
+                              name="username"
+                              ref="username"
+                              placeholder="Email or User Name"
                             />
                             <input
                               type="password"
                               name="password"
+                              ref="password"
                               placeholder="Password"
                             />
                             <div className="button-box">
