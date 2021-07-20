@@ -8,7 +8,11 @@ const seller = [
   {
     label: "Products",
     icon: "icon ni ni-block-over",
-    url: "/seller/categories",
+    url: "/seller/products",
+  }, {
+    label: "Stock Management",
+    icon: "icon ni ni-view-x3",
+    url: "/seller/stock",
   },
   {
     label: "Orders",

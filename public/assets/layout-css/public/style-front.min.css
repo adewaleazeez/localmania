@@ -3604,7 +3604,7 @@ a.quick_view:hover {
 .home-furniture .add-to-link ul li a:hover {
   color: #ef1e1e;
 }
-.rating-product i {
+.rating-product i, .rating-product .icon {
   overflow: hidden;
   font-size: 18px;
   color: #fdd835;

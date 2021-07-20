@@ -20,7 +20,7 @@ export default function CustomModal({ title, content, isVisible, onClose }) {
             )}
           </div>
           <div className="modal-body">{content}</div>
-          <div className="modal-footer theme-bg py-1"></div>
+          <div className="modal-footer theme-bg py-0" style={{height: "4px"}}></div>
         </div>
       </Modal>
     )

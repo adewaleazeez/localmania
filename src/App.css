@@ -213,7 +213,7 @@ textarea:-moz-placeholder {
   padding: 20px;
   border-width: 2px;
   border-radius: 2px;
-  border-color: #33c92d;
+  border-color: #7f8dff;
   border-style: dashed;
   background-color: #fafafa;
   color: #bdbdbd;
@@ -320,4 +320,8 @@ a:hover {
 .btn-theme-light.btn-theme-light:hover {
   background-color: #4a6695 !important;
   border-color: #4a6695 !important;
+}
+
+.clickable{
+  cursor: pointer;
 }

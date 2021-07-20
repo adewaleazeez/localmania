@@ -15,6 +15,9 @@ import SellerLoginPage from "../Pages/Seller/SellerLoginPage";
 import SellerCategoriesPage from "../Pages/Seller/SellerCategoriesPage";
 import SellerPasswordResetPage from "../Pages/Seller/SellerPasswordResetPage";
 import SellerRegistrationSuccessPage from "../Pages/Seller/SellerRegistrationSuccess";
+import SellerProductsPage from "../Pages/Seller/SellerProductsPage";
+import SellerProductDetailsPage from "../Pages/Seller/SellerProductDetailsPage";
+import SellerStockPage from "../Pages/Seller/SellerStockPage";
 
 export const appRoutes = [
   {
@@ -81,5 +84,14 @@ export const appRoutes = [
   {
     route: "/seller/categories",
     component: SellerCategoriesPage,
+  }, {
+    route: "/seller/products",
+    component: SellerProductsPage,
+  }, {
+    route: "/seller/product/:productId",
+    component: SellerProductDetailsPage,
+  }, {
+    route: "/seller/stock",
+    component: SellerStockPage,
   },
 ];
