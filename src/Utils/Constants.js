@@ -23,7 +23,7 @@ export default class Constants {
       overflow: "visible",
       border: "0",
       width: "90%",
-      maxWidth: "500px",
+      maxWidth: "500px", padding: "0"
     },
   };
 

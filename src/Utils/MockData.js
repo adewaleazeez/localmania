@@ -69,6 +69,97 @@ export const bestSellers = [
   },
 ];
 
+export const productList = [
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 4,
+    price: 50,
+    discountPercentage: 5,
+    isNew: true,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 4,
+    price: 50,
+    discountPercentage: 0,
+    isNew: false,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 4,
+    price: 50,
+    discountPercentage: 3,
+    isNew: false,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 3,
+    price: 50,
+    discountPercentage: 5,
+    isNew: false,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 5,
+    price: 50,
+    discountPercentage: 5,
+    isNew: false,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 4,
+    price: 50,
+    discountPercentage: 5,
+    isNew: false,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 5,
+    price: 50,
+    discountPercentage: 5,
+    isNew: false,
+  },
+  {
+    productId: "123-abc",
+    image1: Constants.subfolder + "/images/product-1.jpg",
+    image2: Constants.subfolder + "/images/product-2.jpg",
+    productCategory: "JUICES",
+    productName: "Mighty Mango",
+    ratingStars: 4,
+    price: 50,
+    discountPercentage: 5,
+    isNew: false,
+  },
+];
+
 export const newArrivals = [
   {
     productId: "123-abc",
@@ -220,3 +311,9 @@ export const mockCart = [
     isNew: false,
   },
 ];
+
+export const categories =[
+  {label: "Category 1", value:"Category 1"},
+  {label: "Category 2", value:"Category 2"},
+  {label: "Category 3", value:"Category 3"}
+]

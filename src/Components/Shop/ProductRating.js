@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 
-export default function ProductRating({ stars }) {
+export default function ProductRating({ stars, innerPage }) {
   stars = stars || 1;
   const rating = [];
   for (var i = 1; i <= stars; i++) {
@@ -9,7 +9,7 @@ export default function ProductRating({ stars }) {
   return (
     <div className="rating-product">
       {rating.map((i) => (
-        <i className="fa fa-star small" style={{ zoom: "0.8" }} />
+        innerPage?<em key={i} style={{color: "#fdd835"}} className="icon ni ni-star-fill"></em>: <i key={i} className="fa fa-star small" style={{ zoom: "0.8" }} />
       ))}
     </div>
   );
