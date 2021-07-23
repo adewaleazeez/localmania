@@ -79,19 +79,19 @@ export default function PublicLayoutHeader({}) {
                       <ul className="sub-menu">
                         <li>
                           <Link
-                            to="/login"
+                            to="/seller/login"
                             style={{ color: "#ffffff" }}
                             className="btn btn-warning btn-theme-light mt-2 dropdown-button"
                           >
-                            Login
+                            Seller Login
                           </Link>
                         </li>
                         <li>
                           <Link
-                            to="/register"
+                            to="/seller/registration"
                             className="btn btn-inverse-success mt-2 dropdown-button reverse"
                           >
-                            Create an account
+                            Create Seller account
                           </Link>
                         </li>
                         <li>
