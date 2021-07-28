@@ -5,6 +5,7 @@ import CenterBlock from "../../Components/CenterBlock";
 import MainLayout from "../../Components/Layouts/MainLayout";
 import Constants from "../../Utils/Constants";
 import Logo from "../../Logo";
+import Toastr from "../../Utils/Toastr";
 
 export default class SellerLoginPage extends Component {
   constructor(props) {
@@ -83,7 +84,7 @@ export default class SellerLoginPage extends Component {
                 <div className="form-group">
                   <button
                     type="button"
-                    onClick={() => this.login()}
+                    onClick={() => Toastr("info", "Access now")}
                     className="btn btn-lg btn-primary btn-block"
                   >
                     Access Store
