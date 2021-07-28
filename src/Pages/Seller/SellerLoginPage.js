@@ -33,7 +33,6 @@ export default class SellerLoginPage extends Component {
         "error",
         "Invalid Username or Password"
       );
-      console.log("Invalid Username or Password");
       return true;
     }
     var data = {

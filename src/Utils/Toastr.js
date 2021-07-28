@@ -1,5 +1,6 @@
 import { throttle } from "lodash";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 var numberOfCalls = 1;
 var message;

@@ -10,6 +10,7 @@ import {
   newArrivals,
   featuredProducts,
 } from "../../Utils/MockData";
+import Toastr from "../../Utils/Toastr";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ export default class HomePage extends Component {
                   <div className="row">
                     <div className="col-md-12">
                       <div className="section-title">
-                        <h2 className="">Best Sellers</h2>
+                        <h2 className="">Best Sellers test</h2>
                       </div>
                     </div>
                   </div>
