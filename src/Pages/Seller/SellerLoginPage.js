@@ -5,6 +5,10 @@ import CenterBlock from "../../Components/CenterBlock";
 import MainLayout from "../../Components/Layouts/MainLayout";
 import Constants from "../../Utils/Constants";
 import Logo from "../../Logo";
+import APICall from "../../Utils/APICall";
+import SpinnerButton from "../../Utils/SpinnerButton";
+import UsersDataService from "../../Components/Services/Users.Service";
+import Toastr from "../../Utils/Toastr";
 
 export default class SellerLoginPage extends Component {
   constructor(props) {
@@ -12,6 +16,8 @@ export default class SellerLoginPage extends Component {
     this.state = {
       loading: true,
       redirectUrl: null,
+      username: "",
+      password: ""
     };
   }
 
@@ -19,6 +25,40 @@ export default class SellerLoginPage extends Component {
 
   login() {
     this.setState({ redirectUrl: "/seller/dashboard" });
+  }
+  callLoginEndpoint() {
+    this.setState({ loading: true });
+    if(this.refs.username.value=="" || this.refs.password.value==""){
+      Toastr(
+        "error",
+        "Invalid Username or Password"
+      );
+      console.log("Invalid Username or Password");
+      return true;
+    }
+    var data = {
+      userName: this.refs.username.value,
+      password: this.refs.password.value
+    };
+    
+    UsersDataService.findByUserNamePassword(data)
+      .then(response => {
+        console.log(response);
+        Toastr(
+          "info",
+          "Your request was successful...."
+        );
+        console.log("Your request was successful....");
+        this.setState({ redirectUrl: "/seller/dashboard" });
+        //this.props.history.push('/');
+        //localStorage.setItem('token', response.data.token);
+        //this.setState({redirectUrl: "/account"});
+      })
+      .catch(e => {
+        //console.log(e);
+        this.setState({ loading: false });
+      });
+      
   }
 
   render() {
@@ -55,7 +95,9 @@ export default class SellerLoginPage extends Component {
                     <input
                       type="text"
                       className="form-control form-control-lg"
-                      id="email"
+                      id="username"
+                      name="username"
+                      ref="username"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -75,6 +117,8 @@ export default class SellerLoginPage extends Component {
                       type="password"
                       className="form-control form-control-lg"
                       id="password"
+                      name="password"
+                      ref="password"
                       placeholder="Enter your password"
                     />
                   </div>
@@ -83,7 +127,7 @@ export default class SellerLoginPage extends Component {
                 <div className="form-group">
                   <button
                     type="button"
-                    onClick={() => this.login()}
+                    onClick={() => this.callLoginEndpoint()}
                     className="btn btn-lg btn-primary btn-block"
                   >
                     Access Store
@@ -123,7 +167,7 @@ export default class SellerLoginPage extends Component {
                 <h1 className="text-white">
                   <em className="icon ni ni-signin"></em>
                 </h1>
-                <h1 className="text-white">Access your Locamania Store</h1>
+                <h1 className="text-white">Access your Localmania Store</h1>
               </div>
               {/* .slider-init */}
               <div className="slider-dots" />

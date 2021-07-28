@@ -69,7 +69,7 @@ export default class SellerDashboardPage extends Component {
                           <div className="nk-sale-data">
                             <span className="amount">9.69K</span>
                             <span className="sub-title">
-                              <em class="icon ni ni-info-i mr-1"></em>
+                              <em className="icon ni ni-info-i mr-1"></em>
                               <span className="change down text-danger">
                                 10
                               </span>

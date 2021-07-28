@@ -22,7 +22,6 @@ export default function (_messageType, _message) {
 var throttledFunction = throttle(() => showMessage(), 1000);
 
 function showMessage() {
-  console.log(numberOfCalls);
   numberOfCalls++;
 
   var backgroundColor = "#83B739"; //success
@@ -37,6 +36,10 @@ function showMessage() {
     backgroundColor = "#83B739"
   }
 
-
+  
   toast[messageType](message, toastrOptions);
+  toast[messageType](message);
+  console.log("messageType: "+messageType);
+  console.log("message: "+message);
+  console.log("toastrOptions: "+toastrOptions);
 }

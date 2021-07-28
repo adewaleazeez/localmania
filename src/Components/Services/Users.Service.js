@@ -26,9 +26,10 @@ class UsersDataService {
   deleteAll() {
     return http.delete(`/users`);
   }
-
-  findByUserNamePassword(username, password) {
-    return apicall(`/users/?username=${username}&password=${password}`, "GET");
+ 
+  findByUserNamePassword(data) {
+    return apicall("users/authenticate", "POST", data);
+    //return apicall(`/users/authenticate/?username=${username}&password=${password}`, "GET");
     /*mysqlConnection.query('SELECT * FROM products', (err, rows, fields) => {
       if (!err)
           res.send(rows);
