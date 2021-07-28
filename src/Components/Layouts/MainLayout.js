@@ -4,6 +4,7 @@ import CenterBlock from "../CenterBlock";
 import Spinner from "../../Utils/Spinner";
 import MainLayoutSidebar from "./MainLayoutSidebar";
 import MainLayoutHeader from "./MainLayoutHeader";
+import { ToastContainer } from "react-toastify";
 
 //For interfaces where the user has logged in,
 //and seller registration and login
@@ -78,6 +79,7 @@ export default class MainLayout extends Component {
         )}
         {this.state.loading || (
           <div className="nk-body bg-lighter npc-general has-sidebar">
+            <ToastContainer />
             <div className="nk-app-root">
               {/* main @s */}
               <div className="nk-main ">

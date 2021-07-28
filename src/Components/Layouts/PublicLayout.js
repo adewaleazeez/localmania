@@ -5,6 +5,7 @@ import "../../sass/public-layout.scss";
 import PublicLayoutFooter from "./PublicLayoutFooter";
 import CenterBlock from "../CenterBlock";
 import Spinner from "../../Utils/Spinner";
+import { ToastContainer } from "react-toastify";
 
 //The public layout is for interfaces like shoping, login, checkout etc
 //where the user has not logged into the system yet.
@@ -88,6 +89,7 @@ export default class PublicLayout extends Component {
         )}
         {this.state.loading || (
           <div id="main" className="public-layout-container">
+            <ToastContainer/>
             <PublicLayoutHeader />
             {this.props.children}
             <PublicLayoutFooter />
