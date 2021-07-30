@@ -23,9 +23,10 @@ export default class SellerLoginPage extends Component {
 
   componentDidMount() {}
 
-  login() {
+  /*login() {
     this.setState({ redirectUrl: "/seller/dashboard" });
-  }
+  }*/
+
   callLoginEndpoint() {
     this.setState({ loading: true });
     if(this.refs.username.value=="" || this.refs.password.value==""){
@@ -39,22 +40,25 @@ export default class SellerLoginPage extends Component {
       userName: this.refs.username.value,
       password: this.refs.password.value
     };
-    
+    //console.log("response");
     UsersDataService.findByUserNamePassword(data)
       .then(response => {
-        console.log(response);
+        //console.log(response);
         Toastr(
           "info",
-          "Your request was successful...."
+          "Your login is successful...."
         );
-        console.log("Your request was successful....");
         this.setState({ redirectUrl: "/seller/dashboard" });
+        localStorage.setItem('token', response.data.token);
         //this.props.history.push('/');
-        //localStorage.setItem('token', response.data.token);
         //this.setState({redirectUrl: "/account"});
       })
       .catch(e => {
         //console.log(e);
+        Toastr(
+          "error",
+          "Error loging in"
+        );
         this.setState({ loading: false });
       });
       

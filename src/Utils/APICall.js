@@ -3,7 +3,7 @@ import Toastr from "./Toastr";
 import Constants from "./Constants";
 
 export default function (Url, Method, Data = null, timeoutOverride) {
-  if(!Url.includes("authenticate")){
+  if(!Url.includes("users/authenticate") && !Url.includes("users/register")){
     if (localStorage.getItem("token")) {
       var authToken = localStorage.getItem("token");
       axios.defaults.headers.common["Authorization"] = `Bearer ${authToken}`;
@@ -14,12 +14,12 @@ export default function (Url, Method, Data = null, timeoutOverride) {
   axios.defaults.withCredentials = true;
   axios.interceptors.response.use(
     (response) => {
-      //console.log(response);
-      Toastr(
+      console.log(response);
+      /*Toastr(
         "info",
         "Your request was successful...."
-      );
-      //console.log("Your request was successful....");
+      );*/
+      console.log("Your request was successful....");
       if (response.data && response.data.redirectUrl) {
         if (response.data.redirectUrl.toLowerCase().startsWith("http")) {
           window.location.href = response.data.redirectUrl;

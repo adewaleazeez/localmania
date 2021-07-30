@@ -5,6 +5,10 @@ import CenterBlock from "../../Components/CenterBlock";
 import MainLayout from "../../Components/Layouts/MainLayout";
 import Constants from "../../Utils/Constants";
 import Logo from "../../Logo";
+import APICall from "../../Utils/APICall";
+import SpinnerButton from "../../Utils/SpinnerButton";
+import UsersDataService from "../../Components/Services/Users.Service";
+import Toastr from "../../Utils/Toastr";
 
 export default class SellerRegistationPage extends Component {
   constructor(props) {
@@ -21,8 +25,69 @@ export default class SellerRegistationPage extends Component {
     //add code to clear shopping cart
   }
 
-  register() {
+  /*register() {
     this.setState({ redirectUrl: "/seller/registration-success" });
+  }*/
+
+  register() {
+    this.setState({ loading: true });
+    let errormessage = "";
+    if(this.refs.businessName.value==""){
+      errormessage = <div>{errormessage}<div>Business Name can not be blank<br/></div></div>;
+    }
+    if(this.refs.officeAddress.value==""){
+      errormessage = <div>{errormessage}<div>Office Address can not be blank<br/></div></div>;
+    }
+    if(this.refs.phoneNumber.value==""){
+      errormessage = <div>{errormessage}<div>Phone Number can not be blank<br/></div></div>;
+    }
+    if(this.refs.emailAddress.value==""){
+      errormessage = <div>{errormessage}<div>Email Address can not be blank<br/></div></div>;
+    }
+    if(this.refs.userName.value==""){
+      errormessage = <div>{errormessage}<div>User Name can not be blank<br/></div></div>;
+    }
+    if(this.refs.password.value==""){
+      errormessage = <div>{errormessage}<div>Password can not be blank<br/></div></div>;
+    }
+    if(this.refs.password.value != this.refs.repeatpassword.value){
+      errormessage = <div>{errormessage}<div>Password and Repeat Password don't match<br/></div></div>;
+    }
+    if(errormessage !=""){
+      errormessage = <div>Please correct the following errors:<br/>{errormessage}</div>;
+      Toastr("error", errormessage);
+      return true;
+    }
+    var data = {
+      businessName: this.refs.businessName.value,
+      officeAddress: this.refs.officeAddress.value,
+      phoneNumber: this.refs.phoneNumber.value,
+      emailAddress: this.refs.emailAddress.value,
+      userName: this.refs.userName.value,
+      password: this.refs.password.value
+    };
+    //console.log("response");
+    UsersDataService.create(data)
+      .then(response => {
+        //console.log(response);
+        Toastr(
+          "info",
+          "Seller registration is successful...."
+        );
+        this.setState({ redirectUrl: "/seller/registration-success" });
+        //this.props.history.push('/');
+        //localStorage.setItem('token', response.data.token);
+        //this.setState({redirectUrl: "/account"});
+      })
+      .catch(e => {
+        //console.log(e);
+        Toastr(
+          "error",
+          "There is problem registering the seller"
+        );
+        this.setState({ loading: false });
+      });
+      
   }
 
   render() {
@@ -62,17 +127,9 @@ export default class SellerRegistationPage extends Component {
                     <input
                       type="text"
                       className="form-control form-control-lg"
-                      id="name"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <div className="form-control-wrap">
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                      id="name"
+                      id="businessName"
+                      name="businessName"
+                      ref="businessName"
                       placeholder="Enter your store name"
                     />
                   </div>
@@ -82,8 +139,46 @@ export default class SellerRegistationPage extends Component {
                     <input
                       type="text"
                       className="form-control form-control-lg"
-                      id="email"
+                      id="officeAddress"
+                      name="officeAddress"
+                      ref="officeAddress"
+                      placeholder="Enter your office address"
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <div className="form-control-wrap">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      ref="phoneNumber"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <div className="form-control-wrap">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      id="emailAddress"
+                      name="emailAddress"
+                      ref="emailAddress"
                       placeholder="Enter your email address"
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <div className="form-control-wrap">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      id="userName"
+                      name="userName"
+                      ref="userName"
+                      placeholder="Enter user name"
                     />
                   </div>
                 </div>
@@ -102,7 +197,17 @@ export default class SellerRegistationPage extends Component {
                       type="password"
                       className="form-control form-control-lg"
                       id="password"
+                      name="password"
+                      ref="password"
                       placeholder="Enter your password"
+                    /><br/>
+                    <input
+                      type="password"
+                      className="form-control form-control-lg"
+                      id="repeatpassword"
+                      name="repeatpassword"
+                      ref="repeatpassword"
+                      placeholder="Enter your repeat password"
                     />
                   </div>
                 </div>
@@ -154,7 +259,7 @@ export default class SellerRegistationPage extends Component {
                 className="slider-init"
                 data-slick='{"dots":true, "arrows":false}'
               >
-                <h1 className="text-white">Create your own Locamania store</h1>
+                <h1 className="text-white">Create your own Localmania store</h1>
                 <h4 className="text-white font-weight-normal mt-2">
                   It takes only a few minutes to start selling online
                 </h4>

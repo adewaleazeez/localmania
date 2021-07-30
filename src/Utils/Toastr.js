@@ -2,6 +2,7 @@ import { throttle } from "lodash";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+
 var numberOfCalls = 1;
 var message;
 var messageType;
@@ -13,7 +14,8 @@ const toastrOptions = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-};
+  bodyOutputType: 'trustedHtml',
+  };
 export default function (_messageType, _message) {
   message = _message;
   messageType = _messageType;
@@ -39,8 +41,8 @@ function showMessage() {
 
   
   toast[messageType](message, toastrOptions);
-  toast[messageType](message);
-  console.log("messageType: "+messageType);
-  console.log("message: "+message);
-  console.log("toastrOptions: "+toastrOptions);
+  //toast[messageType](message);
+  //console.log("messageType: "+messageType);
+  //console.log("message: "+message);
+  //console.log("toastrOptions: "+toastrOptions);
 }
