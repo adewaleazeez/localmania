@@ -54,7 +54,7 @@ export default class SellerRegistationPage extends Component {
       errormessage = <div>{errormessage}<div>Password and Repeat Password don't match<br/></div></div>;
     }
     if(errormessage !=""){
-      errormessage = <div>Please correct the following errors:<br/>{errormessage}</div>;
+      errormessage = <div><h5>Please correct the following errors:</h5>{errormessage}</div>;
       Toastr("error", errormessage);
       return true;
     }

@@ -34,7 +34,7 @@ export default class LoginPage extends Component {
       .then(response => {
         
         this.props.history.push('/');
-        //localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data.token);
         //this.setState({redirectUrl: "/account"});
       })
       .catch(e => {
