@@ -15,10 +15,10 @@ export default function (Url, Method, Data = null, timeoutOverride) {
   axios.interceptors.response.use(
     (response) => {
       console.log(response);
-      /*Toastr(
+      Toastr(
         "info",
         "Your request was successful...."
-      );*/
+      );
       console.log("Your request was successful....");
       if (response.data && response.data.redirectUrl) {
         if (response.data.redirectUrl.toLowerCase().startsWith("http")) {
@@ -60,8 +60,10 @@ export default function (Url, Method, Data = null, timeoutOverride) {
     Url = Url.substring(1);
   }
 
-  console.log("api baseurl: " + baseUrl);
-  console.log("url: " + baseUrl + Url);
+  Toastr(
+    "success",
+    "url: " + baseUrl + Url
+  );
 
   var Response = axios({
     method: Method,

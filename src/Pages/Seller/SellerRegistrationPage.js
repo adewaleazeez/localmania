@@ -66,10 +66,15 @@ export default class SellerRegistationPage extends Component {
       userName: this.refs.userName.value,
       password: this.refs.password.value
     };
-    //console.log("response");
+    console.log("businessName"+data.businessName);
+    console.log("officeAddress"+data.officeAddress);
+    console.log("phoneNumber"+data.phoneNumber);
+    console.log("emailAddress"+data.emailAddress);
+    console.log("userName"+data.userName);
+    console.log("password"+data.password);
     UsersDataService.create(data)
       .then(response => {
-        //console.log(response);
+        console.log("response::: "+response);
         Toastr(
           "info",
           "Seller registration is successful...."
@@ -80,7 +85,7 @@ export default class SellerRegistationPage extends Component {
         //this.setState({redirectUrl: "/account"});
       })
       .catch(e => {
-        //console.log(e);
+        console.log("error::: "+e);
         Toastr(
           "error",
           "There is problem registering the seller"
