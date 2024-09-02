@@ -12,7 +12,7 @@ export default function PublicLayoutHeader({}) {
             {/*Left Start*/}
             <div className="col-lg-4 col-md-4">
               <div className="left-text">
-                <p>Welcome to Locamania!</p>
+                <p>Welcome to LocaChampion!</p>
               </div>
             </div>
             {/*Left End*/}
@@ -66,7 +66,7 @@ export default function PublicLayoutHeader({}) {
             {/* Navigation Start */}
             <div className="col-md-10 col-sm-10">
               <div className="header_account_area">
-                <div className="main-navigation d-none d-lg-block mt-0">
+                <div className="main-navigation mt-0">{/* d-none d-lg-block */}
                   <ul>
                     <li className="menu-dropdown">
                       <a href="#">
@@ -79,7 +79,16 @@ export default function PublicLayoutHeader({}) {
                       <ul className="sub-menu">
                         <li>
                           <Link
-                            to="/seller/login"
+                            to="/admin/login"
+                            style={{ color: "#ffffff" }}
+                            className="btn btn-warning btn-theme-light mt-2 dropdown-button"
+                          >
+                            Admin Login
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/user/login"
                             style={{ color: "#ffffff" }}
                             className="btn btn-warning btn-theme-light mt-2 dropdown-button"
                           >
@@ -88,22 +97,10 @@ export default function PublicLayoutHeader({}) {
                         </li>
                         <li>
                           <Link
-                            to="/seller/registration"
+                            to="/user/registration"
                             className="btn btn-inverse-success mt-2 dropdown-button reverse"
                           >
                             Create Seller account
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/account">
-                            <i className="mdi mdi-account-outline mr-2 account-icon" />{" "}
-                            Account
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/orders">
-                            <i className="mdi mdi-buffer mr-2 account-icon" />{" "}
-                            Orders
                           </Link>
                         </li>
                         <li>
@@ -121,7 +118,7 @@ export default function PublicLayoutHeader({}) {
                 <div className="cart-info d-flex">
                   <div className="mini-cart-warp">
                     <Link to="/cart" className="count-cart">
-                      <span>20.00</span>
+                      <span>0.00</span>
                     </Link>
                   </div>
                 </div>

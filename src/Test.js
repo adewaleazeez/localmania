@@ -15,7 +15,7 @@ class Test extends Component {
         axios({
             method: "POST",
             url: "http://test.a1school.net/onboard/email",
-            data: {email: "fadipe.emma@gmail.com"},
+            data: {email: "adewaleazeez@gmail.com"},
             timeout: process.env.REACT_APP_REQUEST_TIMEOUT
           }).then(data=>
             console.log(data)

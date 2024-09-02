@@ -45,28 +45,38 @@ export default function MainLayoutHeader({}) {
                   <div className="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                     <div className="user-card">
                       <div className="user-avatar">
-                        <span>AZ</span>
+                        <span>{localStorage.getItem('username').substring(0, 1).toLocaleUpperCase()}{localStorage.getItem('email').substring(0, 1).toLocaleUpperCase()}</span>
                       </div>
                       <div className="user-info">
-                        <span className="lead-text">Adewale Azeez</span>
-                        <span className="sub-text">adewaleazeez@gmail.com</span>
+                        <span className="lead-text">{localStorage.getItem('username')}</span>
+                        <span className="sub-text">{localStorage.getItem('email')}</span>
                       </div>
                     </div>
                   </div>
+                  {/* <div className="dropdown-inner">
+                    <ul className="link-list">
+                      <li>
+                      <Link to={(localStorage.getItem('username')==="Administrator") ? "/admin/registration" : "/user/registrationedit"}>
+                        <em className="icon ni ni-user-alt" />
+                        <span>Edit Profile</span>
+                      </Link>
+                      </li>
+                    </ul>
+                  </div> */}
                   <div className="dropdown-inner">
                     <ul className="link-list">
                       <li>
-                        <Link to="/seller/profile">
-                          <em className="icon ni ni-user-alt" />
-                          <span>View Profile</span>
-                        </Link>
+                      <Link to={(localStorage.getItem('username')==="Administrator") ? "/admin/passwordchange" : "/user/passwordchange"}>
+                        <em className="icon ni ni-lock-alt" />
+                        <span>Change Password</span>
+                      </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="dropdown-inner">
                     <ul className="link-list">
                       <li>
-                        <Link to="/seller/login">
+                        <Link to={(localStorage.getItem('username')==="Administrator") ? "/user/login" : "/user/login"}>
                           <em className="icon ni ni-signout" />
                           <span>Sign out</span>
                         </Link>
@@ -84,5 +94,7 @@ export default function MainLayoutHeader({}) {
       </div>
       {/* .container-fliud */}
     </div>
+
+    
   );
 }

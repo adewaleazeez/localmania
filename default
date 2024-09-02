@@ -38,12 +38,12 @@ server {
 	#
 	# include snippets/snakeoil.conf;
 
-	root /var/www/139.162.254.246/localmania;
+	root /root/pzvisitregister;
 
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;
 
-	server_name 139.162.254.246;
+	server_name 178.79.148.147;
 
 	location / {
 		# First attempt to serve request as file, then

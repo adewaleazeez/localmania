@@ -206,10 +206,10 @@ export default class ProductSearchPage extends Component {
                     <h4 className="pro-sidebar-title">Seller</h4>
                     <div className="sidebar-widget-list">
                       <ul>
-                        {this.sellers.map((seller, index) => (
+                        {this.sellers.map((user, index) => (
                           <li key={index}>
                             <div className="sidebar-widget-list-left">
-                              <input type="checkbox" /> <a href="#">{seller}</a>
+                              <input type="checkbox" /> <a href="#">{user}</a>
                               <span className="checkmark" />
                             </div>
                           </li>

@@ -7,7 +7,7 @@ import MainLayoutHeader from "./MainLayoutHeader";
 import { ToastContainer } from "react-toastify";
 
 //For interfaces where the user has logged in,
-//and seller registration and login
+//and user registration and login
 
 export default class MainLayout extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ export default class MainLayout extends Component {
     this.loadScripts();
     setTimeout(() => {
       this.setState({ loading: false });
-    }, 2000);
+    }, 5000);
   }
 
   componentWillUnmount() {

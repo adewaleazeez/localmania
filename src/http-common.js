@@ -1,8 +1,10 @@
 import axios from "axios";
+import Constants from "./Utils/Constants";
+
 const apiCall = require('./Utils/APICall');
 
 export default axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: Constants.apiBaseUrl,
   headers: {
     "Content-type": "application/json"
   }

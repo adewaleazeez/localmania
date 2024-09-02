@@ -2,13 +2,15 @@ import Modal from "react-modal";
 import React from "react";
 import Constants from "../Utils/Constants";
 
-export default function CustomModal({ title, content, isVisible, onClose }) {
+export default function CustomModal({ title, content, isVisible, onClose, bigForm }) {
   return (
     isVisible && (
       <Modal
-        style={Constants.defaultModalStyle}
+        style={bigForm ? Constants.defaultBigModalStyle : Constants.defaultModalStyle}
         isOpen={isVisible}
+        ariaHideApp={false}
         onRequestClose={onClose ? () => onClose() : null}
+        shouldCloseOnOverlayClick={false}
       >
         <div className="modal-content">
           <div className="modal-header">
